@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callback</title>
+</head>
+<body>
+    <script>
+        function fetchData(callback) {
+    console.log("Fetching data...");
+
+    let success = true; // Simulate success or failure
+
+    setTimeout(function () {
+        if (success) {
+            callback(null, "Data fetched successfully!");
+        } else {
+            callback("Failed to fetch data.", null);
+        }
+    }, 2000);
+}
+
+// Calling the function
+fetchData(function (error, result) {
+    if (error) {
+        console.log(error);
+    } else {
+        console.log(result);
+    }
+});
+    </script>
+    <body>
+        <html>
+

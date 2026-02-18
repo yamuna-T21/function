@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Promise Conversation</title>
+</head>
+<body>
+
+<script>
+
+function talk() {
+
+    return new Promise(function(resolve, reject) {
+
+        console.log("Person 1: Hello!");
+        
+        setTimeout(function() {
+            resolve("Person 2: Hi! I am fine ");
+        }, 2000);
+
+    });
+
+}
+
+talk()
+.then(function(message) {
+    console.log(message);
+    console.log("Person 1: Glad to hear that!");
+})
+.catch(function(error) {
+    console.log(error);
+});
+
+</script>
+
+</body>
+</html>
